@@ -1,7 +1,7 @@
 {
-  "name": "express-query-boolean",
+  "name": "express-query-boolean-numbers",
   "version": "2.1.2",
-  "description": "Convert query strings to dates for express/connect applications.",
+  "description": "Convert query strings to numbers and booleans for express/connect applications.",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -18,7 +18,8 @@
     "connect",
     "true",
     "false",
-    "boolean"
+    "boolean", 
+    "numbers"
   ],
   "author": "Marius Craciunoiu (http://www.mariusc23.com/)",
   "license": "MIT",

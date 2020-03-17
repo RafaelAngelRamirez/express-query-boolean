@@ -40,6 +40,15 @@ console.log(req.query);
 // => { a: true, b: { c: false } }
 ```
 
+#### Numbers
+This version convert string to numbers if they can be converted. 
+```js
+// ?a=2a&b=2
+console.log(req.query);
+// => { a: '2a', b: 2 }
+```
+
+
 
 ## License
 Copyright (c) 2015 Marius Craciunoiu. Licensed under the MIT license.

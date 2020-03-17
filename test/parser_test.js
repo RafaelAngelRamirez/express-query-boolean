@@ -39,7 +39,7 @@ exports.parser = {
       },
       'Converts \'true\' string.'
     );
-
+    
     test.done();
   },
 
@@ -54,6 +54,19 @@ exports.parser = {
       'Converts \'false\' string.'
     );
 
+    test.done();
+  },
+
+  numbers: function(test){
+    test.deepEqual(
+      parser({
+        a: '21'
+      }),
+      {
+        a: 21
+      },
+      'Converts \'21\' to number.'
+    );
     test.done();
   },
 
@@ -76,13 +89,15 @@ exports.parser = {
       parser({
         a: {
           b: 'true',
-          c: 'false'
+          c: 'false',
+          c: '5.4'
         }
       }),
       {
         a: {
           b: true,
-          c: false
+          c: false,
+          c: 5.4,
         }
       },
       'Recursively parses object.'
@@ -98,6 +113,8 @@ exports.parser = {
           { a: 'true' },
           { b: 'false' },
           { c: 'test' },
+          { d: '2.12' },
+          { e: '2.12a' },
         ],
       }),
       {
@@ -105,6 +122,8 @@ exports.parser = {
           { a: true },
           { b: false },
           { c: 'test' },
+          { d: 2.12 },
+          { e: '2.12a' },
         ],
       },
       'Recursively parses array.'

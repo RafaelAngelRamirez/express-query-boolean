@@ -18,12 +18,12 @@ The module will recursively attempt to parse every property in `req.query`.
 Load it right after `bodyParser`:
 
 ```js
-var boolParser = require('express-query-boolean');
+var autoParser = require('express-query-auto-parse');
 
 // [...]
 
 app.use(bodyParser.json());
-app.use(boolParser());
+app.use(autoParser());
 ```
 
 #### Without
@@ -61,6 +61,9 @@ console.log(req.query);
 
 # Change logs
 
+## v3.0.1
+- FIX - Documentation
+
 ## v3.0.0
 - Added support for date conversion.
 - FIX - Vulns and outdatet packages. 
@@ -74,7 +77,7 @@ console.log(req.query);
 
 
 ## Forked from
-Copyright (c) 2015 [Marius Craciunoiu](https://travis-ci.org/mariusc23/express-query-boolean). Licensed under the MIT license.
+Copyright (c) 2015 [Marius Craciunoiu](https://github.com/mariusc23/express-query-boolean). Licensed under the MIT license.
 
 
 

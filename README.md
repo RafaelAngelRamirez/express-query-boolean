@@ -1,10 +1,10 @@
 express-query-auto-parse
 ==================
 
-> Convert query strings to boolean and numbers for express/connect applications.
+> Convert query strings to boolean, numbers and dates for express/connect applications.
 
-[![npm](https://img.shields.io/npm/v/express-query-boolean.svg)](https://www.npmjs.com/package/express-query-boolean)
-[![build status](https://travis-ci.org/mariusc23/express-query-boolean.svg)](https://travis-ci.org/mariusc23/express-query-boolean)
+[![npm](https://img.shields.io/npm/v/express-query-auto-parse.svg)](https://www.npmjs.com/package/express-query-auto-parse)
+[![Build Status](https://travis-ci.com/RafaelAngelRamirez/express-query-boolean.svg?branch=master)](https://travis-ci.com/RafaelAngelRamirez/express-query-boolean)
 
 
 ## Installation
@@ -41,12 +41,42 @@ console.log(req.query);
 ```
 
 #### Numbers
-This version convert string to numbers if they can be converted. 
+Convert string to numbers if they can be converted. 
 ```js
 // ?a=2a&b=2
 console.log(req.query);
 // => { a: '2a', b: 2 }
 ```
 
+### Dates ( New in v2.2.0 )
+Convert string to dates if they are valid dates. 
+```js
+// ?a=2a&b=2020-03-17T23:05:53.733Z
+console.log(req.query);
+// => { a: '2a', b: 2020-03-17T23:05:53.733Z }
+```
+
+
+
+
+# Change logs
+
+## v3.0.0
+- Added support for date conversion.
+- FIX - Vulns and outdatet packages. 
+- FIX - Travis integration shows wrong build.
+- FIX - NPM tag show wrong info.
+- README updated
+
+
+
+
+
+
 ## Forked from
-Copyright (c) 2015 Marius Craciunoiu. Licensed under the MIT license.
+Copyright (c) 2015 [Marius Craciunoiu](https://travis-ci.org/mariusc23/express-query-boolean). Licensed under the MIT license.
+
+
+
+
+

@@ -69,6 +69,17 @@ exports.parser = {
     );
     test.done();
   },
+  
+  dates: function(test){
+    test.deepEqual( parser({
+      a: "2020-03-17T23:05:53.733Z"
+    }),
+    {
+      a: new Date("2020-03-17T23:05:53.733Z")
+    },
+    'Must be valid date.')
+    test.done();
+  },
 
   empty: function(test) {
     test.deepEqual(
@@ -90,14 +101,22 @@ exports.parser = {
         a: {
           b: 'true',
           c: 'false',
-          c: '5.4'
+          d: '5.4',
+          e: "2020-03-17T23:05:53.733Z",
+          f: {
+            g:'This is a string'
+          }
         }
       }),
       {
         a: {
           b: true,
           c: false,
-          c: 5.4,
+          d:5.4,
+          e: new Date("2020-03-17T23:05:53.733Z"),
+          f: {
+            g:'This is a string'
+          }
         }
       },
       'Recursively parses object.'
@@ -115,6 +134,7 @@ exports.parser = {
           { c: 'test' },
           { d: '2.12' },
           { e: '2.12a' },
+          { f: "2020-03-17T23:05:53.733Z" },
         ],
       }),
       {
@@ -124,6 +144,7 @@ exports.parser = {
           { c: 'test' },
           { d: 2.12 },
           { e: '2.12a' },
+          { f: new Date("2020-03-17T23:05:53.733Z") },
         ],
       },
       'Recursively parses array.'
